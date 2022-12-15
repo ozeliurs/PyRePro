@@ -1,0 +1,14 @@
+{% extends "site.html" %}
+
+{% block title %}Configs{% endblock %}
+
+{% block content %}
+    <h1>Enabled Configs</h1>
+    <div class="row">
+        {% for config in configs %}
+        <a href="/config/{{ config }}" class="col-2 card bg-primary text-light is-center">
+            <h5>{{ config }}</h5>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}

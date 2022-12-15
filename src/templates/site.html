@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PyRePro - {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-left">
+    <a class="brand" href="#">Brand</a>
+    <div class="tabs">
+      <a>Link 1</a>
+      <a class="active">Link 2</a>
+    </div>
+  </div>
+  <div class="nav-right">
+    <a class="button outline">Button</a>
+  </div>
+</nav>
+<main class="container">
+    {% block content %}{% endblock %}
+</main>
+</body>
+</html>
