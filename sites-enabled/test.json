@@ -1,0 +1,49 @@
+{
+    "listen": [
+        {
+            "port": 80,
+            "default_server": true,
+            "ipv6": false,
+            "ssl": false
+        },
+        {
+            "port": 443,
+            "default_server": true,
+            "ipv6": false,
+            "ssl": true
+        },
+        {
+            "port": 443,
+            "default_server": true,
+            "ipv6": true,
+            "ssl": true
+        }
+    ],
+    "server_name": [
+        "localhost",
+        "example.com"
+    ],
+    "locations": [
+        {
+            "path": "/",
+            "root": "/var/www/html",
+            "index": [
+                "index.html",
+                "index.htm"
+            ]
+        },
+        {
+            "path": "/api",
+            "proxy_pass": "http://localhost:5000"
+        }
+    ],
+    "ssl": {
+        "cert": "/etc/letsencrypt/live/example.com/fullchain.pem",
+        "key": "/etc/letsencrypt/live/example.com/privkey.pem"
+    },
+    "logs": {
+        "access": "/var/log/nginx/example.com.access.log",
+        "error": "/var/log/nginx/example.com.error.log"
+    },
+    "optionnal": "# This is an optionnal block"
+}
